@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contoso Task Pane Add-in</title>
+
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+
+    <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui#/. -->
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
+
+    <!-- Template styles -->
+    <link href="taskpane.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="ms-font-m ms-welcome ms-Fabric">
+    <header class="ms-welcome__header ms-bgColor-neutralLighter">
+        <img width="90" height="90" src="../../assets/dasherhq_logo.jpg" alt="Contoso" title="Contoso" />
+        <h1 class="ms-font-su">Welcome to the Flowpoint Excel Add-In Demo</h1>
+    </header>
+    <section id="sideload-msg" class="ms-welcome__main">
+        <h2 class="ms-font-xl">Please <a target="_blank" href="https://learn.microsoft.com/office/dev/add-ins/testing/test-debug-office-add-ins#sideload-an-office-add-in-for-testing">sideload</a> your add-in to see app body.</h2>
+    </section>
+    <main id="app-body" class="ms-welcome__main" style="display: none;">
+        <p class="ms-font-l">Modify the Excel cells, then click <b>Run</b>.</p>
+        <div role="button" id="run" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+            <span class="ms-Button-label">Run</span>
+        </div>
+        <div role="button" id="validateString" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+            <span class="ms-Button-label">Validate String</span>
+        </div>
+        <div role="button" id="validateNumber" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+            <span class="ms-Button-label">Validate Number</span>
+        </div>
+        <div role="button" id="validateBoolean" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+            <span class="ms-Button-label">Validate Boolean</span>
+        </div>
+        <div role="button" id="validateDate" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+            <span class="ms-Button-label">Validate Date</span>
+        </div>
+        <div role="button" id="createDashboard" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+            <span class="ms-Button-label">Create Dashboard</span>
+        </div>
+        <div role="button" id="trackKPIs" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+            <span class="ms-Button-label">Track KPIs</span>
+        </div>
+        <div role="button" id="assessRisks" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+            <span class="ms-Button-label">Assess Risks</span>
+        </div>
+        <div role="button" id="exportDataToSheet" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+            <span class="ms-Button-label">Export Data to New Sheet</span>
+        </div>
+        <div role="button" id="exportDataToJSON" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+            <span class="ms-Button-label">Export Data to JSON</span>
+        </div>
+        <div role="button" id="exportDataWithDate" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+            <span class="ms-Button-label">Export Data with Date</span>
+        </div>
+        <div role="button" id="aggregate" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+            <span class="ms-Button-label">Aggregate Recurring Revenue</span>
+        </div>
+        <div role="button" id="aggregateExpenses" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+            <span class="ms-Button-label">Aggregate Expenses</span>
+        </div>
+        <div role="button" id="getData" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+            <span class="ms-Button-label">GET Data</span>
+        </div>
+
+        
+
+    
+        <form id="dataForm">
+            <div>
+                <label for="metric">Metric:</label>
+                <input type="string" id="metric" name="metric" required>
+            </div>
+            <div>
+                <label for="value">Value:</label>
+                <input type="number" id="value" name="value" required>
+            </div>
+            <div>
+                <label for="notes">Notes:</label>
+                <input type="text" id="notes" name="notes">
+            </div>
+            <div>
+                <label for="isApproved">Is Approved:</label>
+                <input type="checkbox" id="isApproved" name="isApproved">
+            </div>
+            <button type="button" id="submitButton" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+                <span class="ms-Button-label">Submit</span>
+            </button>
+        </form>
+        <p><label id="item-subject"></label></p>
+    </main>
+    <script type="module" src="taskpane.js"></script>
+</body>
+
+</html>
